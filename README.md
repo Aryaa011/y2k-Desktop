@@ -4,7 +4,7 @@ A nostalgic, fully interactive desktop interface built with vanilla HTML, CSS, a
 
 ✨ Features
 🗂️ Desktop
-
+ 
 Draggable desktop icons
 Right-click context menu (long-press on mobile)
 Sticky Notes — drag them anywhere, type anything
