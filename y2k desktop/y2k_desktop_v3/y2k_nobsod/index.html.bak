@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AryaOS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="desktop" class="desktop" aria-label="Desktop">
+    <div class="desktop-icons" role="toolbar" aria-label="Desktop icons">
+      <button type="button" class="desk-icon" data-action="computer" aria-label="My Computer">
+        <img src="assets/icon-computer.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">My Computer</span>
+      </button>
+      <button type="button" class="desk-icon" data-action="documents" aria-label="My Documents">
+        <img src="assets/icon-documents.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">My Documents</span>
+      </button>
+      <button type="button" class="desk-icon" data-action="music" aria-label="Music">
+        <img src="assets/icon-music.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">Music</span>
+      </button>
+      <button type="button" class="desk-icon" data-action="paint" aria-label="Paint">
+        <img src="assets/paint.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">Paint</span>
+      </button>
+      <button type="button" class="desk-icon" data-action="camera" aria-label="Camera">
+        <img src="assets/icon-camera.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">Camera</span>
+      </button>
+      <button type="button" class="desk-icon" data-action="solitaire" aria-label="Solitaire">
+        <img src="assets/icon-solitaire.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">Solitaire.exe</span>
+      </button>
+      <button type="button" class="desk-icon" data-action="recycle" aria-label="Recycle Bin">
+        <img src="assets/icon-recycle.png" alt="" width="48" height="48" class="desk-icon__img" />
+        <span class="desk-icon__label">Recycle Bin</span>
+      </button>
+    </div>
+
+    <div id="windows-root" class="windows-root" aria-live="polite"></div>
+  </div>
+
+  <div id="taskbar" class="taskbar" role="navigation" aria-label="Taskbar">
+    <button type="button" id="btn-start" class="taskbar__start" aria-expanded="false" aria-controls="start-menu">
+      Start
+    </button>
+    <div id="taskbar-tabs" class="taskbar__tabs" role="tablist" aria-label="Open windows"></div>
+    <div class="taskbar__tray">
+      <button type="button" id="btn-chaos" class="taskbar__chaos" title="Spawn chaos popups">⚡</button>
+      <button type="button" id="btn-chaos-toggle" class="taskbar__chaos-toggle" title="Toggle random warnings" aria-pressed="false">
+        Chaos
+      </button>
+      <time id="clock" class="taskbar__clock" datetime="">00:00:00</time>
+    </div>
+  </div>
+
+  <div id="start-menu" class="start-menu" hidden role="menu" aria-label="Start menu">
+    <div class="start-menu__header">AryaOS</div>
+    <div class="start-menu__body">
+      <div class="start-menu__item start-menu__item--sub" data-submenu="programs">
+        <span class="start-menu__arrow">▸</span>
+        Programs
+        <div id="submenu-programs" class="start-menu__sub" hidden role="menu">
+          <button type="button" class="start-menu__sub-item" data-open="paint">Paint</button>
+          <button type="button" class="start-menu__sub-item" data-open="music">Music Player</button>
+          <button type="button" class="start-menu__sub-item" data-open="solitaire">Solitaire</button>
+          <button type="button" class="start-menu__sub-item" data-open="about">About AryaOS</button>
+          <button type="button" class="start-menu__sub-item" data-open="internet">Internet Explorer</button>
+        </div>
+      </div>
+      <button type="button" class="start-menu__item" data-open="computer">My Computer</button>
+      <button type="button" class="start-menu__item start-menu__item--danger" data-action="shutdown">Shut Down…</button>
+    </div>
+  </div>
+
+  <div id="popup-layer" class="popup-layer" aria-live="assertive"></div>
+  <div id="chaos-layer" class="chaos-layer" aria-live="polite"></div>
+
+  <audio id="audioPlayer" preload="metadata"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
